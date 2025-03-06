@@ -1,0 +1,297 @@
+@import url(reset.css);
+
+body{
+    background-color: #272b33;
+    color: #fff;
+    font-family: Roboto;
+}
+header{
+    margin:50px auto ;
+    text-align: center;
+    h1{
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+    h3{
+        font-size: 23px;
+        a{
+            color: #fff;
+            text-decoration: underline;
+        }
+    }
+}
+main{
+    width: 100%;
+    height: 100%;
+    input{
+        height: 30px;
+        border: 1px solid gray;
+        border-radius: 6px;
+    }
+    .user-inputs{
+        display: block;
+        width:max-content;
+        margin: 0 auto;
+    }
+    .buttons{
+        display: block;
+        width:max-content;
+        margin: 20px auto;
+    }
+    .table-contact{
+        display: flex;
+        width: 500px;
+        height: 100%;
+        margin: 50px auto;
+        .table-contact__column{
+            width: 50%;
+            .column__element{
+                width: 100%;
+                height: max-content;
+                span{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 30px;
+                    border: 1px solid gray;
+                    background-color: #423d3b;
+                    cursor: pointer;
+                    .count{
+                        position: absolute;
+                        margin: 0px 100px 0 0px;
+                    }
+                }
+                .info-block{
+                    display: none;
+                    grid-template-columns: 80% 20%;
+                    font-size: 14px;
+                    width: 100%;
+                    height: max-content;
+                    background-color: #4b4b4b;
+                    border-bottom: 1px solid grey;
+                    .info-block__name{
+                        display: flex;
+                        padding: 5px;
+                    }
+                    .info-block__vacancy{
+                        display: flex;
+                        padding: 5px;
+                    }
+                    .info-block__number{
+                        display: flex;
+                        padding: 5px;
+                    }
+                    .delete{
+                        width: 15px;
+                        height: 15px;
+                        background-color: red;
+                        margin: 30px auto;
+                        border-radius: 1px;
+                        cursor: pointer;
+                        &::after{
+                            content: '';
+                            width: 15px;
+                            height: 2px;
+                            position: absolute;
+                            background-color: white;
+                            rotate: 45deg;
+                            margin-top: 6px;
+                        }
+                        &::before{
+                            content: '';
+                            width: 15px;
+                            height: 2px;
+                            position: absolute;
+                            background-color: white;
+                            rotate: -45deg;
+                            margin-top: 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    .modal{
+        background-color: #efefef;
+        padding: 20px;
+        border: 1px solid gray;
+        border-radius: 10px;
+        max-width: 600px;
+        width: 100%;
+        position: relative;
+        #modal-content{
+            h1{
+                font-size: 32px;
+                margin-bottom: 10px;
+                font-weight: 600;
+                text-align: center;
+                color: black;
+            }
+            .modal-search__close{
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                top: 15px;
+                right: 20px;
+                cursor: pointer;
+                &::after{
+                    content: '';
+                    width: 15px;
+                    height: 2px;
+                    position: absolute;
+                    background-color: black;
+                    rotate: 45deg;
+                    margin-top: 6px;
+                }
+                &::before{
+                    content: '';
+                    width: 15px;
+                    height: 2px;
+                    position: absolute;
+                    background-color: black;
+                    rotate: -45deg;
+                    margin-top: 6px;
+                }
+            }
+            #search{
+                width: 100%;
+                height: 30px;
+                font-size: 18px;
+            }
+            .users{
+                width: 100%;
+                margin: 10px 0 0 0;
+                min-height: 300px;
+                max-height: max-content;
+                background-color: #fff;
+                .info-block{
+                    display: flex;
+                    grid-template-columns: 80% 20%;
+                    font-size: 14px;
+                    width: 100%;
+                    height: max-content;
+                    background-color: #b9b9b9;
+                    border-bottom: 1px solid grey;
+                    align-items: center;
+                    color: black;
+                    .info-block__name{
+                        display: flex;
+                        padding: 5px;
+                    }
+                    .info-block__vacancy{
+                        display: flex;
+                        padding: 5px;
+                    }
+                    .info-block__number{
+                        display: flex;
+                        padding: 5px;
+                    }
+                    .edit{
+                        margin:0 0 0 50px;
+                        font-size: 20px;
+                        cursor: pointer;
+                    }
+                    .delete{
+                        width: 15px;
+                        height: 15px;
+                        background-color: red;
+                        border-radius: 1px;
+                        margin:0 0 0 100px;
+                        cursor: pointer;
+                        &::after{
+                            content: '';
+                            width: 15px;
+                            height: 2px;
+                            position: absolute;
+                            background-color: white;
+                            rotate: 45deg;
+                            margin-top: 6px;
+                        }
+                        &::before{
+                            content: '';
+                            width: 15px;
+                            height: 2px;
+                            position: absolute;
+                            background-color: white;
+                            rotate: -45deg;
+                            margin-top: 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.modal-overlay2{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    .modal-edit{
+        background-color: #efefef;
+        padding: 20px;
+        border: 1px solid gray;
+        border-radius: 10px;
+        max-width: 300px;
+        height: 140px;
+        position: relative;
+        .modal-content-edit{
+            h1{
+                font-size: 20px;
+                margin: 0 0 5px 0;
+                text-align: center;
+                color: black;
+                font-weight: 600;
+            }
+            input{
+                margin: 0 0 5px 0;
+            }
+            .modal-content-edit__close{
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                top: 15px;
+                right: 20px;
+                cursor: pointer;
+                &::after{
+                    content: '';
+                    width: 15px;
+                    height: 2px;
+                    position: absolute;
+                    background-color: black;
+                    rotate: 45deg;
+                    margin-top: 6px;
+                }
+                &::before{
+                    content: '';
+                    width: 15px;
+                    height: 2px;
+                    position: absolute;
+                    background-color: black;
+                    rotate: -45deg;
+                    margin-top: 6px;
+                }
+            }
+        }
+    }
+}
